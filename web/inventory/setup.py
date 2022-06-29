@@ -4,7 +4,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    setup_requires=['wheel'],
+    setup_requires=["wheel"],
     name="InventoryAPI",
     version="0.0.1",
     author="Brian Mutisya",

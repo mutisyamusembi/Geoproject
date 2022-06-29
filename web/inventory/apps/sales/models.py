@@ -86,10 +86,13 @@ class OrderItem(models.Model):
 
     def update_product_stock(self):
         if self.qty > self.product.stock:
-            msg = "Quantity can not be more than current stock of {}".format(
-                self.product.stock
+            raise ValidationError(
+                {
+                    "qty": "The quantity cannot be more than current stock of {}".format(
+                        self.product.stock
+                    )
+                }
             )
-            return msg 
         else:
             self.product.stock -= self.qty
             self.product.save()

@@ -7,7 +7,6 @@ admin.site.register(Order)
 admin.site.register(OrderItem)
 
 
-
 #  location / {
 #      return 301 https://127.0.0.1$request_uri;
 #  }
